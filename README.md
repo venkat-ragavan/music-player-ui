@@ -2,7 +2,9 @@
 
 Complete UI of an Android music player mobile app. 
 
-![Artboard](https://api.time.com/wp-content/uploads/2018/04/listening-to-music-headphones.jpg?quality=85&w=1024&h=512&crop=1)
+![Artboard](app/src/main/res/drawable/music_player_1.jpg)
+
+![Artboard](app/src/main/res/drawable/music_player_2.jpg)
 
 ##### Components
 * RecyclerView
