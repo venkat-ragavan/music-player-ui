@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/unit_x4"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:id="@+id/artist_left"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:id="@+id/left_card_view"
+            android:elevation="60dp"
+            app:cardCornerRadius="60dp">
+
+            <ImageButton
+                android:id="@+id/img_left_album"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@null"
+                android:src="@drawable/album_faded"
+                android:contentDescription="@string/information" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_left_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/unit_x4"
+            android:layout_gravity="center"
+            android:text="@string/album_faded_artist"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="@dimen/unit_x4"
+            style="@style/Theme.Soul.Title"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:id="@+id/artist_right"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/unit_x4"
+        android:layout_weight="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/artist_left"
+        android:layout_marginStart="@dimen/unit_x4">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:id="@+id/right_card_view"
+            android:elevation="60dp"
+            app:cardCornerRadius="60dp">
+
+            <ImageButton
+                android:id="@+id/img_right_album"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@null"
+                android:src="@drawable/album_faded"
+                android:contentDescription="@string/information" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_right_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/unit_x4"
+            android:layout_gravity="center"
+            android:text="@string/album_faded_artist"
+            android:layout_marginStart="@dimen/unit_x4"
+            style="@style/Theme.Soul.Title"/>
+
+    </LinearLayout>
+
+</LinearLayout>

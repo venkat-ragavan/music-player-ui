@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Soul</string>
+    <string name="title_home">Home</string>
+    <string name="title_podcast">Podcast</string>
+    <string name="title_my_library">My Library</string>
+    <string name="information">Information</string>
+    <string name="song">Song</string>
+    <string name="music">Music Podcast</string>
+
+    <string name="type_international">International</string>
+    <string name="type_artists">Artists</string>
+    <string name="type_album">Album</string>
+    <string name="type_tamil">Tamil</string>
+    <string name="type_hindi">Hindi</string>
+
+    <string name="artist_hans_zimmer">Hans Zimmer</string>
+
+    <string name="album_harmony">Harmony with A.R. Rahman</string>
+    <string name="album_harmony_artist">A.R. Rahman</string>
+    <string name="album_flying">The Flying Lotus</string>
+    <string name="album_flying_artist">A.R. Rahman</string>
+    <string name="album_lover">Lover</string>
+    <string name="album_lover_artist">Taylor Swift</string>
+    <string name="album_faded">Faded</string>
+    <string name="album_faded_artist">Alan Walker</string>
+
+</resources>

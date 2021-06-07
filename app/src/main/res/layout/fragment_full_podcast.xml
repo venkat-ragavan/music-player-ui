@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_full_album">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.vrrv.musicplayer.ui.fullpodcast.FullPodcastViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/podcast_title"
+            layout="@layout/layout_title"
+            app:isHome="@{false}"
+            app:isPodcast="@{true}"
+            app:text="@{viewModel.podcastData.name}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit_x4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/podcast_scroll"
+            android:overScrollMode="never"
+            app:layout_constraintTop_toBottomOf="@+id/podcast_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/unit_x15"
+                android:layout_marginTop="@dimen/unit_x2"
+                android:layout_marginLeft="@dimen/unit_x4"
+                android:layout_marginRight="@dimen/unit_x4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:id="@+id/podcast_image"
+                        android:layout_marginTop="@dimen/unit_x2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:orientation="horizontal" />
+
+                    <TextView
+                        android:id="@+id/podcast_artist"
+                        style="@style/Theme.Soul.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/unit_x4"
+                        android:layout_marginRight="@dimen/unit_x4"
+                        android:layout_marginTop="@dimen/unit_x12"
+                        android:text="@{viewModel.podcastData.artist}"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/podcast_image" />
+
+                    <TextView
+                        android:id="@+id/podcast_episodes"
+                        style="@style/Theme.Soul.Subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/unit_x4"
+                        android:layout_marginRight="@dimen/unit_x4"
+                        android:layout_marginTop="@dimen/unit_x3"
+                        android:text="@{viewModel.podcastData.noOfEpisodes}"
+                        app:layout_constraintTop_toBottomOf="@+id/podcast_artist"
+                        app:layout_constraintLeft_toRightOf="@+id/podcast_image"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/podcast_description"
+                    style="@style/Theme.Soul.Subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_x6"
+                    android:text="@{viewModel.podcastData.description}" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_podcast_episodes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:overScrollMode="never"
+                    android:layout_marginTop="@dimen/unit_x6"
+                    app:layoutMarginBottom="@{viewModel.isPlaying() ? @dimen/unit_x13 : @dimen/unit_x4}"
+                    tools:listitem="@layout/layout_podcast_episode"
+                    tools:itemCount="3" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/podcast_playing"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/layout_playing"
+            app:song="@{viewModel.playingSong.name}"
+            app:artist="@{viewModel.playingSong.artists}"
+            app:image="@{viewModel.playingSong.image}"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

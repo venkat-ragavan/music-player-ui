@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="text"
+            type="java.lang.String" />
+        <variable
+            name="isHome"
+            type="java.lang.Boolean" />
+        <variable
+            name="isPodcast"
+            type="java.lang.Boolean" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/unit_x4"
+        android:weightSum="5">
+
+        <ImageButton
+            android:id="@+id/img_left_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:tint="@color/white"
+            android:layout_marginTop="@dimen/unit_x05"
+            android:visibility="@{isHome ? View.GONE : View.VISIBLE}"
+            android:layout_marginLeft="@dimen/unit_x4"
+            android:src="@drawable/ic_baseline_chevron_left_24"
+            android:contentDescription="@string/information"
+            android:layout_marginStart="@dimen/unit_x4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:text="@{text}"
+            android:visibility="@{(isHome || isPodcast) ? View.VISIBLE : View.GONE}"
+            android:layout_marginLeft="@dimen/unit_x4"
+            style="@style/Theme.Soul.Header"
+            android:layout_weight="5"
+            android:layout_marginStart="@dimen/unit_x4"
+            app:layout_constraintLeft_toRightOf="@+id/img_left_arrow"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/settings"
+            android:background="@null"
+            android:tint="@color/white"
+            android:layout_marginTop="@dimen/unit_x05"
+            android:src="@{isHome ? @drawable/ic_baseline_settings_24 : @drawable/ic_baseline_more_vert_24}"
+            android:layout_marginRight="@dimen/unit_x4"
+            android:contentDescription="@string/information"
+            android:layout_marginEnd="@dimen/unit_x4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="175dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/unit_x4"
+    android:paddingRight="@dimen/unit_x4">
+
+    <ImageButton
+        android:id="@+id/img_album"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="@dimen/unit_x4"
+        android:background="@null"
+        android:src="@drawable/album_faded"
+        android:contentDescription="@string/information" />
+
+    <TextView
+        android:id="@+id/txt_album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/album_faded"
+        android:layout_marginTop="@dimen/unit_x2"
+        style="@style/Theme.Soul.Title" />
+
+    <TextView
+        android:id="@+id/txt_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/album_faded_artist"
+        android:layout_marginTop="@dimen/unit_x1"
+        style="@style/Theme.Soul.Subtitle" />
+
+</LinearLayout>

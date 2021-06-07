@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.vrrv.musicplayer.ui.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/home_title"
+            layout="@layout/layout_title"
+            app:isHome="@{true}"
+            app:isPodcast="@{false}"
+            app:text="@{viewModel.title}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit_x4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/international"
+            android:overScrollMode="never"
+            app:layout_constraintTop_toBottomOf="@+id/home_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/unit_x15"
+                android:layout_marginTop="@dimen/unit_x2"
+                android:layout_marginLeft="@dimen/unit_x4"
+                android:layout_marginRight="@dimen/unit_x4">
+
+                <TextView
+                    android:id="@+id/tv_international"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type_international"
+                    style="@style/Theme.Soul.Header" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_international"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:overScrollMode="never"
+                    tools:listitem="@layout/layout_album_view"/>
+
+                <TextView
+                    android:id="@+id/tv_artist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_x4"
+                    android:text="@string/type_artists"
+                    style="@style/Theme.Soul.Header" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_artist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_x4"
+                    android:scrollbars="none"
+                    android:overScrollMode="never"
+                    tools:listitem="@layout/layout_artist_view"/>
+
+                <TextView
+                    android:id="@+id/tv_album"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_x2"
+                    android:text="@string/type_album"
+                    style="@style/Theme.Soul.Header" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_album"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:overScrollMode="never"
+                    android:layout_marginBottom="@dimen/unit_x4"
+                    tools:listitem="@layout/layout_album_view"/>
+
+                <TextView
+                    android:id="@+id/tv_tamil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_x2"
+                    android:text="@string/type_tamil"
+                    style="@style/Theme.Soul.Header" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tamil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:overScrollMode="never"
+                    app:layoutMarginBottom="@{viewModel.isPlaying() ? @dimen/unit_x80 : @dimen/unit_x4}"
+                    tools:listitem="@layout/layout_album_view"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/play_layout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/layout_playing"
+            app:song="@{viewModel.playingSong.name}"
+            app:artist="@{viewModel.playingSong.artists}"
+            app:image="@{viewModel.playingSong.image}"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

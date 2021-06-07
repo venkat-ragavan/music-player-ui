@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="song"
+            type="java.lang.String" />
+        <variable
+            name="artist"
+            type="java.lang.String" />
+        <variable
+            name="image"
+            type="java.lang.Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5"
+        android:id="@+id/playing"
+        android:background="@color/bottom_grey">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/playing_image"
+            android:scaleType="centerCrop"
+            app:image="@{image}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/divider"/>
+
+        <TextView
+            android:id="@+id/tv_playing_song"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:text="@{song}"
+            android:layout_marginTop="@dimen/unit_x2"
+            android:layout_marginLeft="@dimen/unit_x4"
+            style="@style/Theme.Soul.Title"
+            android:layout_weight="5"
+            android:layout_marginStart="@dimen/unit_x4"
+            app:layout_constraintLeft_toRightOf="@+id/playing_image"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_playing_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:text="@{artist}"
+            android:layout_marginLeft="@dimen/unit_x4"
+            android:layout_marginTop="@dimen/unit_x05"
+            android:paddingBottom="@dimen/unit_x05"
+            style="@style/Theme.Soul.Subtitle"
+            android:layout_weight="5"
+            android:layout_marginStart="@dimen/unit_x4"
+            app:layout_constraintLeft_toRightOf="@+id/playing_image"
+            app:layout_constraintTop_toBottomOf="@+id/tv_playing_song"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/img_options"
+            android:src="@drawable/ic_baseline_pause_24"
+            android:background="@null"
+            android:layout_marginTop="@dimen/unit_x2"
+            android:layout_marginRight="@dimen/unit_x4"
+            android:contentDescription="@string/information"
+            android:layout_marginEnd="@dimen/unit_x4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:id="@+id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/playing_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/divider" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:paddingBottom="@dimen/unit_x2">
+
+    <LinearLayout
+        android:id="@+id/pd_left"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginEnd="@dimen/unit_x4"
+        android:orientation="vertical"
+        android:layout_marginRight="@dimen/unit_x4">
+
+        <ImageButton
+            android:id="@+id/pd_left_image"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginTop="@dimen/unit_x4"
+            android:background="@null"
+            android:contentDescription="@string/information"
+            android:scaleType="centerCrop"
+            android:src="@drawable/album_faded" />
+
+        <TextView
+            android:id="@+id/pd_text_left_title"
+            style="@style/Theme.Soul.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/unit_x2"
+            android:text="@string/album_faded" />
+
+        <TextView
+            android:id="@+id/pd_txt_left_artist"
+            style="@style/Theme.Soul.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/unit_x1"
+            android:text="@string/album_faded_artist" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/pd_right"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/unit_x4">
+
+        <ImageButton
+            android:id="@+id/pd_right_image"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="@dimen/unit_x4"
+            android:background="@null"
+            android:src="@drawable/album_faded"
+            android:contentDescription="@string/information" />
+
+        <TextView
+            android:id="@+id/pd_text_right_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/album_faded"
+            android:layout_marginTop="@dimen/unit_x2"
+            style="@style/Theme.Soul.Title" />
+
+        <TextView
+            android:id="@+id/pd_txt_right_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/album_faded_artist"
+            android:layout_marginTop="@dimen/unit_x1"
+            style="@style/Theme.Soul.Subtitle" />
+
+    </LinearLayout>
+
+</LinearLayout>
