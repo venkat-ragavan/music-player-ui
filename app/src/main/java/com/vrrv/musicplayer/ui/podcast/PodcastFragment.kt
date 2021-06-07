@@ -1,7 +1,6 @@
 package com.vrrv.musicplayer.ui.podcast
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -55,7 +54,6 @@ class PodcastFragment : Fragment(), OnPodcastSelectListener {
         val podcastLayout: ConstraintLayout = binding.root.findViewById(R.id.podcast_layout)
         context?.let { setPaddingBottom(it, podcastLayout, 60) }
         if (sharedPreference.getSong() != null) {
-            Log.d("aaa sha if ", sharedPreference.getSong().toString())
             podcastViewModel.isPlaying.value = true
             podcastViewModel.playingSong.value = Songs(
                 sharedPreference.getSong().toString(),
@@ -82,7 +80,6 @@ class PodcastFragment : Fragment(), OnPodcastSelectListener {
     }
 
     override fun selectedPodcast(podcast: String) {
-        Log.d("aaa selected podcast ", podcast)
         bundle.putString("podcast", podcast)
         findNavController().navigate(R.id.navigation_full_podcast, bundle)
     }

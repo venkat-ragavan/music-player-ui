@@ -1,7 +1,6 @@
 package com.vrrv.musicplayer.ui.fullpodcast
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vrrv.musicplayer.BR
@@ -18,7 +16,6 @@ import com.vrrv.musicplayer.R
 import com.vrrv.musicplayer.databinding.FragmentFullPodcastBinding
 import com.vrrv.musicplayer.ui.fullalbum.Songs
 import com.vrrv.musicplayer.ui.utillity.SharedPreference
-
 
 class FullPodcastFragment : Fragment(), OnPodcastSelection {
 
@@ -55,7 +52,6 @@ class FullPodcastFragment : Fragment(), OnPodcastSelection {
     override fun onResume() {
         super.onResume()
         if (sharedPreference.getSong() != null) {
-            Log.d("aaa sha if ", sharedPreference.getSong().toString())
             viewModel.isPlaying.value = true
             viewModel.playingSong.value = Songs(
                 sharedPreference.getSong().toString(),
@@ -81,8 +77,6 @@ class FullPodcastFragment : Fragment(), OnPodcastSelection {
     }
 
     override fun selectedPodcast(song: Episode) {
-        Log.d("aaa selected episode ", song.toString())
-
         loadPlayingLayout(song)
         sharedPreference.setSong(song.title)
         sharedPreference.setArtists(viewModel.podcastData.value!!.artist)

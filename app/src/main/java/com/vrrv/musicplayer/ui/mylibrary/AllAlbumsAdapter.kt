@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.vrrv.musicplayer.R
 import com.vrrv.musicplayer.ui.home.HomeAlbum
-import com.vrrv.musicplayer.ui.home.OnAlbumSelectListener
 
 internal class AllAlbumsAdapter(private var allAlbumList: List<LibraryAlbum>, val row: OnLibraryAlbumSelectListener) :
     RecyclerView.Adapter<AllAlbumsAdapter.MyViewHolder>() {

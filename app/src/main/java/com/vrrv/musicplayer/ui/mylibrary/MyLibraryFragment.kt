@@ -1,7 +1,6 @@
 package com.vrrv.musicplayer.ui.mylibrary
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +19,6 @@ import com.vrrv.musicplayer.databinding.FragmentMyLibraryBinding
 import com.vrrv.musicplayer.ui.fullalbum.OnSongSelection
 import com.vrrv.musicplayer.ui.fullalbum.Songs
 import com.vrrv.musicplayer.ui.home.HomeAlbum
-import com.vrrv.musicplayer.ui.home.OnAlbumSelectListener
 import com.vrrv.musicplayer.ui.podcast.OnPodcastSelectListener
 import com.vrrv.musicplayer.ui.utillity.SharedPreference
 import com.vrrv.musicplayer.ui.utillity.extensions.setPaddingBottom
@@ -99,7 +97,6 @@ class MyLibraryFragment : Fragment(), OnSongSelection, OnPodcastSelectListener,
         context?.let { setPaddingBottom(it, allSongsLayout, 0) }
         context?.let { setPaddingBottom(it, albumLayout, 120) }
         if (sharedPreference.getSong() != null) {
-            Log.d("aaa sha if ", sharedPreference.getSong().toString())
             viewModel.isPlaying.value = true
             viewModel.playingSong.value = Songs(
                 sharedPreference.getSong().toString(),
@@ -165,7 +162,6 @@ class MyLibraryFragment : Fragment(), OnSongSelection, OnPodcastSelectListener,
 
     override fun selectedSong(song: Songs) {
         loadPlayingLayout(song)
-        Log.d("vrrv allsong ", song.toString())
         sharedPreference.setSong(song.name)
         sharedPreference.setArtists(song.artists)
         sharedPreference.setDuration(song.duration)
@@ -180,20 +176,15 @@ class MyLibraryFragment : Fragment(), OnSongSelection, OnPodcastSelectListener,
     }
 
     override fun selectedPodcast(podcast: String) {
-        Log.d("vrrv allpodcast ", podcast)
         bundle.putString("podcast", podcast)
         findNavController().navigate(R.id.navigation_full_podcast, bundle)
     }
 
     override fun selectedAlbum(album: HomeAlbum) {
-        Log.d("vrrv allalbum ", album.toString())
         bundle.putParcelable("album", album)
-        Log.d("aaa bun ", bundle.getParcelable<HomeAlbum>("album").toString())
         findNavController().navigate(R.id.navigation_full_album, bundle)
     }
 
-    override fun selectedPlaylist(name: String) {
-        Log.d("vrrv selected playlist ", name)
-    }
+    override fun selectedPlaylist(name: String) {}
 
 }

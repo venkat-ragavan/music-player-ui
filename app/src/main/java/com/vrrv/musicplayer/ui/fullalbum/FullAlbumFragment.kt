@@ -1,7 +1,6 @@
 package com.vrrv.musicplayer.ui.fullalbum
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -65,7 +64,6 @@ class FullAlbumFragment : Fragment(), OnSongSelection {
     override fun onResume() {
         super.onResume()
         if (sharedPreference.getSong() != null) {
-            Log.d("aaa sha if ", sharedPreference.getSong().toString())
             viewModel.playingSong.value = Songs(
                 sharedPreference.getSong().toString(),
                 sharedPreference.getArtists().toString(),
@@ -80,7 +78,6 @@ class FullAlbumFragment : Fragment(), OnSongSelection {
 
     override fun selectedSong(song: Songs) {
         loadPlayingLayout(song)
-        Log.d("aaa song ", song.toString())
         sharedPreference.setSong(song.name)
         sharedPreference.setArtists(song.artists)
         sharedPreference.setDuration(song.duration)

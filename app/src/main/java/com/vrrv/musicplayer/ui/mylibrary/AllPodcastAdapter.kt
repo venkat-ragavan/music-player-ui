@@ -20,7 +20,6 @@ internal class AllPodcastAdapter(private var podcastList: List<Podcast>, val row
         var leftArtist: TextView = view.findViewById(R.id.pd_txt_left_artist)
         var leftLayout: LinearLayout = view.findViewById(R.id.pd_left)
 
-
         var rightImage: ImageButton = view.findViewById(R.id.pd_right_image)
         var rightTitle: TextView = view.findViewById(R.id.pd_text_right_title)
         var rightArtist: TextView = view.findViewById(R.id.pd_txt_right_artist)

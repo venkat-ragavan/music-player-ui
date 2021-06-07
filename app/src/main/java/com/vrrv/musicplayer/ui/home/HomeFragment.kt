@@ -1,7 +1,6 @@
 package com.vrrv.musicplayer.ui.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,7 +60,6 @@ class HomeFragment: Fragment(), OnAlbumSelectListener {
     override fun onResume() {
         super.onResume()
         if (sharedPreference.getSong() != null) {
-            Log.d("aaa sha if ", sharedPreference.getSong().toString())
             viewModel.isPlaying.value = true
             viewModel.playingSong.value = Songs(
                 sharedPreference.getSong().toString(),
@@ -117,7 +115,6 @@ class HomeFragment: Fragment(), OnAlbumSelectListener {
 
     override fun selectedAlbum(album: HomeAlbum) {
         bundle.putParcelable("album", album)
-        Log.d("aaa bun ", bundle.getParcelable<HomeAlbum>("album").toString())
         findNavController().navigate(R.id.navigation_full_album, bundle)
     }
 }
