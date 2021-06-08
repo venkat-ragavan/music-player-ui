@@ -9,7 +9,7 @@ const val MUSIC = "Music"
 // Album
 const val HARMONY_WITH_ARR = "Harmony with A.R. Rahman"
 const val LOVER = "Lover"
-const val AETCTBO = "Aetctbo"
+const val CONNECTIONS = "Connections"
 const val THE_FLYING_LOTUS = "The Flying Lotus"
 
 // International

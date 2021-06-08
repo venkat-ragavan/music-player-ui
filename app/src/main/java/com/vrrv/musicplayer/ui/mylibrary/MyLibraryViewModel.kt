@@ -19,7 +19,7 @@ class MyLibraryViewModel : ViewModel() {
 
     fun getAllSongs(): List<Songs> {
         return INCEPTION_SONGS + INTERSTELLAR_SONGS + HOURS_SONGS + PEOPLE_LIKE_US_SONGS +
-                THE_FLYING_LOTUS_SONGS + HARMONY_WITH_ARR_SONGS + AETCTBO_SONGS + LOVER_SONGS +
+                THE_FLYING_LOTUS_SONGS + HARMONY_WITH_ARR_SONGS + CONNECTIONS_SONGS + LOVER_SONGS +
                 UYIRE_SONGS + KANNATHIL_MUTHAMITTAAL_SONGS + JILLUNU_ORU_KADHAL_SONGS + UNNAALE_UNNAALE_SONGS
     }
 
@@ -34,7 +34,7 @@ class MyLibraryViewModel : ViewModel() {
     fun getAllAlbums(): List<LibraryAlbum> {
         return listOf(
             LibraryAlbum(ALBUM, HARMONY_WITH_ARR, R.drawable.album_harmony_with_arr, AR_RAHMAN,"August 15, 2017", ALBUM, LOVER, R.drawable.album_lover, TAYLOR_SWIFT,"June 10, 2019"),
-            LibraryAlbum(ALBUM, AETCTBO, R.drawable.album_aetctbo, RAUF_FAIK,"July 28, 2016", TAMIL, UYIRE, R.drawable.tam_uyire, AR_RAHMAN,"August 15, 1998"),
+            LibraryAlbum(ALBUM, CONNECTIONS, R.drawable.album_connections, AR_RAHMAN,"July 28, 2010", TAMIL, UYIRE, R.drawable.tam_uyire, AR_RAHMAN,"August 15, 1998"),
             LibraryAlbum(TAMIL, UNNAALE_UNNAALE, R.drawable.tam_unnale_unnale, HARRIS_JAYARAJ,"April 14, 2007", TAMIL, KANNATHIL_MUTHAMITTAAL, R.drawable.tam_kannathil_muthamittaal, AR_RAHMAN,"March 11, 2002"),
             LibraryAlbum(INTERNATIONAL, INTERSTELLAR, R.drawable.int_interstellar, HANS_ZIMMER,"November 10, 2014", INTERNATIONAL, PEOPLE_LIKE_US, R.drawable.int_people_like_us, AR_RAHMAN,"June 19, 2012"),
         )

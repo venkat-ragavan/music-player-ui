@@ -32,7 +32,7 @@ class FullAlbumViewModel : ViewModel() {
     private val albums = mapOf(
         THE_FLYING_LOTUS  to THE_FLYING_LOTUS_SONGS,
         HARMONY_WITH_ARR to HARMONY_WITH_ARR_SONGS,
-        AETCTBO to AETCTBO_SONGS,
+        CONNECTIONS to CONNECTIONS_SONGS,
         LOVER to LOVER_SONGS
     )
 

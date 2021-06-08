@@ -2,9 +2,9 @@
 
 Complete UI of an Android music player mobile app. 
 
-![Artboard](app/src/main/res/drawable/music_player_1.jpg)
+![Artboard](app/src/main/res/drawable/music_player_1.png)
 
-![Artboard](app/src/main/res/drawable/music_player_2.jpg)
+![Artboard](app/src/main/res/drawable/music_player_2.png)
 
 ##### Components
 * RecyclerView

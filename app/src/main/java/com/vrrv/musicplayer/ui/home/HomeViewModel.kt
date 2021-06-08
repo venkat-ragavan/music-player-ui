@@ -28,7 +28,7 @@ class HomeViewModel : ViewModel() {
             ALBUM -> listOf(
                     HomeAlbum(ALBUM, HARMONY_WITH_ARR, R.drawable.album_harmony_with_arr, AR_RAHMAN,"August 15, 2017"),
                     HomeAlbum(ALBUM, LOVER, R.drawable.album_lover, TAYLOR_SWIFT,"June 10, 2019"),
-                    HomeAlbum(ALBUM, AETCTBO, R.drawable.album_aetctbo, RAUF_FAIK,"July 28, 2016"),
+                    HomeAlbum(ALBUM, CONNECTIONS, R.drawable.album_connections, AR_RAHMAN,"July 28, 2010"),
                     HomeAlbum(ALBUM, THE_FLYING_LOTUS, R.drawable.album_flying_lotus, AR_RAHMAN,"February 11, 2017")
             )
             TAMIL -> listOf(

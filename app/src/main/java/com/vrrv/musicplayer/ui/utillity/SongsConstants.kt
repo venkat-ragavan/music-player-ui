@@ -86,13 +86,13 @@ val LOVER_SONGS = listOf(
     Songs("London Bay", TAYLOR_SWIFT, "3:12", R.drawable.album_lover, LOVER)
 )
 
-val AETCTBO_SONGS = listOf(
-    Songs("AETCTBO", RAUF_FAIK, "6:05", R.drawable.album_aetctbo, AETCTBO),
-    Songs("BEYEPA", RAUF_FAIK, "3:01", R.drawable.album_aetctbo, AETCTBO),
-    Songs("MOCTBI", RAUF_FAIK, "4:11", R.drawable.album_aetctbo, AETCTBO),
-    Songs("5 MNYHT Souls", RAUF_FAIK, "5:29", R.drawable.album_aetctbo, AETCTBO),
-    Songs("MAMA", RAUF_FAIK, "2:59", R.drawable.album_aetctbo, AETCTBO),
-    Songs("CONHUE", RAUF_FAIK, "5:36", R.drawable.album_aetctbo, AETCTBO)
+val CONNECTIONS_SONGS = listOf(
+    Songs("Silent Invocation 1", "$AR_RAHMAN, $NAVEEN", "6:05", R.drawable.album_connections, CONNECTIONS),
+    Songs("Silent Invocation 2", NAVEEN, "3:01", R.drawable.album_connections, CONNECTIONS),
+    Songs("Silent Invocation 3", "$AR_RAHMAN, $NAVEEN", "4:11", R.drawable.album_connections, CONNECTIONS),
+    Songs("Mylapore Blues", AR_RAHMAN, "5:29", R.drawable.album_connections, CONNECTIONS),
+    Songs("Himalaya", AR_RAHMAN, "2:59", R.drawable.album_connections, CONNECTIONS),
+    Songs("Kural", "$BLAZE, $GOMATHI", "5:36", R.drawable.album_connections, CONNECTIONS)
 )
 
 val HOURS_SONGS = listOf(
